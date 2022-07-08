@@ -15,16 +15,16 @@ function SingleColor({ rgb, weight, index, hex }) {
                 backgroundColor: `rgb(${bcg})`,
                 border: "1px solid white",
             }}
+            onClick={() => {
+                navigator.clipboard.writeText(`#${hex}`);
+                setShow(true);
+                setTimeout(() => {
+                    setShow(false);
+                }, 1000);
+            }}
         >
             {/* <p className="percent-value">{weight}%</p> */}
             <p
-                onClick={() => {
-                    navigator.clipboard.writeText(`#${hex}`);
-                    setShow(true);
-                    setTimeout(() => {
-                        setShow(false);
-                    }, 1000);
-                }}
                 id="para1"
                 className="color-value"
                 style={{
